@@ -51,6 +51,8 @@ public class TestExamples {
         return CancerPhenopacketExample.cancerPhenopacket();
     }
 
+    public static Phenopacket deepPhePhenopacket() { return DeepPhePhenopacketExample.deepPhePhenopacket();}
+
     public static Phenopacket biosamplesPhenopacket() {
         return BiosamplesPhenopacketExample.biosamplePhenopacket();
     }

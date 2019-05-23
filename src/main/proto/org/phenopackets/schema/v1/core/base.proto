@@ -236,7 +236,7 @@ message Biosample {
     OntologyClass sampled_tissue = 5;
 
     // Phenotypic characteristics of the BioSample, for example histological findings of a biopsy.
-    repeated Phenotype phenotypes = 6;
+    repeated Phenotype phenotypes= 6;
 
     // NCBI taxonomic identifier (NCBITaxon) of the sample e.g. NCBITaxon:9606
     OntologyClass taxonomy = 7;
@@ -500,4 +500,31 @@ message MouseAllele {
     // denote the superscript e.g. <tm1Hcd>. However in this field the allele code should be stored here as without the
     // angled brackets e.g. tm1Hcd in order to allow software to correctly format the symbol.
     string allele_symbol = 3;
+}
+
+message Treatment {
+   org.phenopackets.schema.v1.core.OntologyClass treatment=1;
+   string description=2;
+}
+
+
+message CancerBioMarker {
+     string id=1;
+     string interpretation = 2;
+     org.phenopackets.schema.v1.core.Variant variant=3;
+
+}
+
+message Tumor {
+
+  org.phenopackets.schema.v1.core.OntologyClass location=1;
+  repeated CancerBioMarker biomarkers=6;
+
+}
+message Cancer {
+
+  org.phenopackets.schema.v1.core.Disease diagnosis = 1;
+  repeated Tumor tumors=6;
+  repeated Treatment treatments=7;
+
 }

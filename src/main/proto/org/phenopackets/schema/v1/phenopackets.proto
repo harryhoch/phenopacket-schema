@@ -41,6 +41,9 @@ message Phenopacket {
 
     // Structured definitions of the resources and ontologies used within the phenopacket. REQUIRED
     org.phenopackets.schema.v1.core.MetaData meta_data = 9;
+
+    // add a cancer in
+    repeated org.phenopackets.schema.v1.core.Cancer cancers = 10;
 }
 
 // Phenotype, sample and pedigree data required for a genomic diagnosis.
